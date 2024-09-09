@@ -7,6 +7,7 @@ function getHumanChoice(){
         return choice;
     }
     return "invalid";
+    //console.log("You entered:" getHumanChoice());
 
 }
 
@@ -26,8 +27,40 @@ function getComputerChoice()
     {
         return "scissors";
     }
+    //console.log("the computer threw:" getComputerChoice());
+
 }
 //console.log(getHumanChoice());
-//console.log(getComputerChoice());
 let humanScore = 0;
 let computerScore = 0;
+
+function playRound(humanChoice,computerChoice)
+{
+    let humanChoice = getHumanChoice();
+    let ComputerChoice = getComputerChoice();
+    if(humanChoice === ComputerChoice)
+    {
+        console.log("tie, neither wins");
+        return; 
+    }
+    else{
+        if(humanChoice === "rock")
+        {
+            if(computerChoice === "scissors")
+            {
+                console.log("human win.");
+                humanScore++;
+                console.log("Score:",humanScore,"for human,",computerScore," for pc");
+                return;
+            }
+            else
+            {
+                console.log("pc win.");
+                computerScore++;
+                console.log("Score:",humanScore,"for human,",computerScore," for pc");
+                return; 
+            }
+        }
+
+    }
+}
