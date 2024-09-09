@@ -1,44 +1,27 @@
 //console.log("Hello World!")
-function getHumanChoice(){
-
-    let choice = prompt("rock, paper or scissors ?").toLowerCase;
-    if(choice === "rock" || choice === "paper" || choice === "scissors")
+playGame();
+function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
+    for(var i = 0 ; i < 5; i++)
     {
-        return choice;
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        console.log("the computer threw:",computerSelection);
+        playRound(humanSelection,computerSelection);
     }
-    return "invalid";
-    //console.log("You entered:" getHumanChoice());
 
-}
+    return;
 
-function getComputerChoice()
+
+
+
+    function playRound(humanChoice,computerChoice)
 {
-    let number = Math.ceil(Math.random()*10) % 3;
-    // 0 - rock, 1 - paper, 2- scissors
-    if(number === 0)
-    {
-        return "rock";
-    }
-    else if (number === 1)
-    {
-        return "paper";
-    }
-    else
-    {
-        return "scissors";
-    }
-    //console.log("the computer threw:" getComputerChoice());
-
-}
-//console.log(getHumanChoice());
-let humanScore = 0;
-let computerScore = 0;
-
-function playRound(humanChoice,computerChoice)
-{
-    let humanChoice = getHumanChoice();
-    let ComputerChoice = getComputerChoice();
-    if(humanChoice === ComputerChoice)
+    //let humanChoice = getHumanChoice();
+    //let ComputerChoice = getComputerChoice();
+    
+    if(humanChoice === computerChoice)
     {
         console.log("tie, neither wins");
         return; 
@@ -95,5 +78,45 @@ function playRound(humanChoice,computerChoice)
                 }
 
         }
+ 
     }
+
+
 }
+function getHumanChoice(){
+
+    let choice = prompt("rock, paper or scissors ?").toLowerCase();
+    if(choice === "rock" || choice === "paper" || choice === "scissors")
+    {
+        return choice;
+    }
+    return "invalid";
+    //console.log("You entered:" getHumanChoice());
+
+}
+
+function getComputerChoice()
+{
+    let number = Math.ceil(Math.random()*10) % 3;
+    // 0 - rock, 1 - paper, 2- scissors
+    if(number === 0)
+    {
+        return "rock";
+    }
+    else if (number === 1)
+    {
+        return "paper";
+    }
+    else
+    {
+        return "scissors";
+    }
+
+}
+
+}
+
+
+//console.log(getHumanChoice());
+
+
