@@ -1,7 +1,7 @@
 //console.log("Hello World!")
 function getHumanChoice(){
 
-    let choice = prompt("rock, paper or scissors ?")
+    let choice = prompt("rock, paper or scissors ?").toLowerCase;
     if(choice === "rock" || choice === "paper" || choice === "scissors")
     {
         return choice;
@@ -61,6 +61,39 @@ function playRound(humanChoice,computerChoice)
                 return; 
             }
         }
+        else if(humanChoice === "paper")
+        {
+            if(computerChoice === "scissors")
+                {
+                    console.log("computer win.");
+                    computerScore++;
+                    console.log("Score:",humanScore,"for human,",computerScore," for pc");
+                    return;
+                }
+                else
+                {
+                    console.log("human win.");
+                    humanScore++;
+                    console.log("Score:",humanScore,"for human,",computerScore," for pc");
+                    return; 
+                }
+        }
+        else{ // human choice is scissors
+            if(computerChoice === "rock")
+                {
+                    console.log("computer win.");
+                    computerScore++;
+                    console.log("Score:",humanScore,"for human,",computerScore," for pc");
+                    return;
+                }
+                else
+                {
+                    console.log("human win.");
+                    humanScore++;
+                    console.log("Score:",humanScore,"for human,",computerScore," for pc");
+                    return; 
+                }
 
+        }
     }
 }
